@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from decouple import config
 from pathlib import Path
+import logging
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,15 +77,15 @@ WSGI_APPLICATION = 'colosovo_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
         
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',  
-        # 'NAME': config('DB_NAME'),    
-        # 'USER': config('DB_USER'),
-        # 'PASSWORD': config('DB_PASSWORD'),
-        # 'HOST': config('DB_HOST'),
-        # 'PORT': config('DB_PORT', cast=int),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  
+        'NAME': config('DB_NAME'),    
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', cast=int),
          
         
     }
@@ -131,3 +132,31 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Logging settings
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
+
+# Get the logger for your specific module or app
+logger = logging.getLogger(__name__)
+
+def my_function():
+    # Log an informational message
+    logger.info('This is an informational message')
+
+    # Log a warning message
+    logger.warning('This is a warning message')
+
+    # Log an error message
+    logger.error('This is an error message')
