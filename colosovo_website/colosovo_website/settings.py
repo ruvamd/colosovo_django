@@ -13,6 +13,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from decouple import config
 from pathlib import Path
 import logging
+import os
+
+print(os.getenv('SECRET_KEY'))
+print(os.getenv('DEBUG'))
+print(os.getenv('DB_NAME'))
+print(os.getenv('DB_USER'))
+print(os.getenv('DB_PASSWORD'))
+print(os.getenv('DB_HOST'))
+print(os.getenv('DB_PORT'))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,7 +51,6 @@ INSTALLED_APPS = [
 
     # Local apps
     'frontend.apps.FrontendConfig',
-    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
