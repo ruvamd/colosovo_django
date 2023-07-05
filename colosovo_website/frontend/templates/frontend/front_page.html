@@ -2,31 +2,35 @@
   <title>Front Page</title>
   <style>
       body {
-        background-color: ivory;
+          background-color: ivory;
       }
-      h1 {
-        text-align: center;
-      }
-      p {
-        margin: 0;
+      .image-container {
+          text-align: center;
+          padding: 70px;
+          width: 83%;
+          background-color: orange;
       }
       .auth-buttons {
-        text-align: right;
-        margin-top: 10px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
+          text-align: right;
+          margin-top: 10px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
       }
       .auth-buttons a {
-        margin-left: 5px;
+          margin-left: 5px;
       }
       .auth-buttons span {
-        margin: 0 5px;
+          margin: 0 5px;
       }
   </style>
 </head>
 <body>
-  <h1>Welcome to the Front Page!</h1>
+
+  <div class="image-container">
+      <img src=""> <!-- Add your image here -->
+  </div>
+  
   <div class="auth-buttons">
       {% if user.is_authenticated %}
           <p>Welcome, {{ user.username }}!</p>
