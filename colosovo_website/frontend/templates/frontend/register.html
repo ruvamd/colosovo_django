@@ -40,17 +40,29 @@
           top: 10px;
           left: 10px;
         }
+        .error-message {
+          color: red;
+        }
     </style>
 </head>
 <body>
     <a class="home-button" href="{% url 'front_page' %}">Home</a>
     <h2>Register</h2>
+    {% if messages %}
+        <ul class="error-message">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <form method="post" action="{% url 'register' %}">
         {% csrf_token %}
         <label for="username">Username:</label>
         <input type="text" name="username" required><br>
         <label for="password">Password:</label>
         <input type="password" name="password" required><br>
+        <label for="password_confirm">Confirm Password:</label>
+        <input type="password" name="password_confirm" required><br>
         <label for="email">Email:</label>
         <input type="email" name="email" required><br>
         <input type="submit" value="Register">

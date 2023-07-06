@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.models import User
 from django.db.models import Q
+from django.contrib import messages
+
 
 def front_page(request):
     return render(request, 'frontend/front_page.html')
@@ -22,26 +24,30 @@ def login_view(request):
     else:
         return render(request, 'frontend/login.html')
 
-
-
-
 def register_view(request):
     if request.method == 'POST':
-        # Handle registration form submission
         username = request.POST['username']
         password = request.POST['password']
+        password_confirm = request.POST['password_confirm']
         email = request.POST['email']
-        # Additional registration fields can be added based on your requirements
 
-        # Create a new user and save it to the database
+        if password != password_confirm:
+            messages.error(request, 'Password confirmation does not match.')
+            return redirect('register')
+
+        # Check if the email already exists in the database
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'This email is already registered. Please choose a different email.')
+            return redirect('register')
+
+        # Proceed with user registration
         user = User.objects.create_user(username=username, password=password, email=email)
-        # You can also set additional user properties if needed, e.g., user.first_name, user.last_name, etc.
-
+        login(request, user)
         return redirect('front_page')  # Redirect to the front page after successful registration
     else:
-        # Render the registration form
         return render(request, 'frontend/register.html')
 
 def logout_view(request):
     logout(request)
     return redirect('front_page')
+
