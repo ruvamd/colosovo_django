@@ -1,0 +1,27 @@
+from django.utils.http import urlsafe_base64_decode
+from django.utils.encoding import force_text
+from django.contrib.auth.tokens import default_token_generator
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+
+def verify_email(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+        
+        if default_token_generator.check_token(user, token):
+            # Mark the user as verified
+            user.is_verified = True
+            user.save()
+            
+            # Redirect to the login page with a success message
+            messages.success(request, 'Your email has been verified. You can now log in.')
+            return redirect('login')
+        else:
+            # Invalid token, show an error
+            messages.error(request, 'Invalid verification link.')
+            return render(request, 'registration/verification_error.html')  # Create an error template
+    except User.DoesNotExist:
+        # User not found, show an error
+        messages.error(request, 'User not found.')
+        return render(request, 'registration/verification_error.html')  # Create an error template

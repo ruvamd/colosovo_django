@@ -28,7 +28,6 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -79,10 +78,7 @@ WSGI_APPLICATION = 'colosovo_website.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        
+    'default': {   
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  
         'NAME': config('DB_NAME'),    
         'USER': config('DB_USER'),
@@ -163,3 +159,13 @@ def my_function():
 
     # Log an error message
     logger.error('This is an error message')
+
+# email verification
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'your-smtp-server.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@example.com'
+EMAIL_HOST_PASSWORD = 'your-email-password'
+
+AUTH_USER_MODEL = 'frontend.CustomUser'
