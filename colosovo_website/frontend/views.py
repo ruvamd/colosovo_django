@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -6,8 +7,8 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import views as auth_views
-from django.contrib.auth.views import PasswordResetConfirmView
-from django.contrib.auth import get_user_model,login,logout
+from django.contrib.auth import get_user_model,login,logout,authenticate
+from django.contrib.auth.views import PasswordResetConfirmView,PasswordResetView
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -50,6 +51,7 @@ def login_view(request):
             # Handle invalid login credentials
             return render(request, 'frontend/login.html', {'error': 'Invalid username/email or password'})
     else:
+        # Include a "Forgot Password" link in your login template
         return render(request, 'frontend/login.html')
 
 def register_view(request):
