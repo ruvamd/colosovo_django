@@ -202,6 +202,6 @@ packages/react-devtools-timeline/dist
 
 #my ignores
 cenv/
-colosovo/
+
 colosovo-backend/
 api/
