@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: colosovo_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ar7Gc/329W!)bPR
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ruvamd@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: ar7Gc/329W!)bPR
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres

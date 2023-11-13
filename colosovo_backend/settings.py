@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-wljn-jk(5gs503hd$_rdk7*@zp!^b(&qyt!f$@89w-#_sj1^!5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,10 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #my apps
-    'users',
+    'rest_framework',
+    'colosovo_backend',
 ]
-
-AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,20 +79,8 @@ WSGI_APPLICATION = 'colosovo_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'colosovo_db',
-        'USER': 'postgres',
-        'PASSWORD': 'ar7Gc/329W!)bPR',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'OPTIONS': {
-            'isolation_level': 'read committed',
-            'client_encoding': 'UTF8',
-            'case_sensitive': True,
-            'charset': 'utf8',
-        },
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'CONN_MAX_AGE': 60,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
