@@ -5,10 +5,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front Page</title>
+    <title>colosovo</title>
+    
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        /* Add some basic styling for the image container */
+        .header-image-container {
+            max-width: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Set the image dimensions */
+        .header-image-container img {
+            width: 1273px;
+            height: 150px;
+            object-fit: cover;  /* Maintain aspect ratio and cover the container */
+        }
+
+        /* Style for the toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        
+        {% comment %} /* Style for the dropdown buttons */
+        .dropdown {
+            margin: 0 5px;  /* Add margin between buttons */
+        } {% endcomment %}
+
+    </style>
+
 </head>
+
 <body>
-    <h1>Welcome to the Front Page!</h1>
-    <!-- Add your content here -->
+    
+    <div class="header-image-container">
+        <img src="{% static 'header_image.jpeg' %}" alt="Header Image">
+    </div>
+
+    <!-- Toolbar with Bootstrap dropdown buttons -->
+    <div class="toolbar">
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Button 1
+            </button>
+
+            <div class="dropdown-menu" aria-labelledby="dropdown1">
+                <a class="dropdown-item" href="#">Option 1</a>
+                <a class="dropdown-item" href="#">Option 2</a>
+                <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Button 2
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown1">
+                <a class="dropdown-item" href="#">Option 1</a>
+                <a class="dropdown-item" href="#">Option 2</a>
+                <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
