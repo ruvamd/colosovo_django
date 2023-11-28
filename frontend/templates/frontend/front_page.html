@@ -8,7 +8,7 @@
     <title>colosovo</title>
     
     <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
         /* Add some basic styling for the image container */
@@ -30,13 +30,30 @@
             display: flex;
             justify-content: space-between;
             margin-top: 10px;
-        
-        {% comment %} /* Style for the dropdown buttons */
+        }
+
+        /* Style for the dropdown buttons */
         .dropdown {
             margin: 0 5px;  /* Add margin between buttons */
-        } {% endcomment %}
+        }
 
     </style>
+
+    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+            
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
+        </li>
+
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
+        </li>
+        
+        <li class="nav-item" role="presentation">
+          <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
+        </li>
+
+    </ul>
 
 </head>
 
@@ -46,38 +63,33 @@
         <img src="{% static 'header_image.jpeg' %}" alt="Header Image">
     </div>
 
-    <!-- Toolbar with Bootstrap dropdown buttons -->
-    <div class="toolbar">
-
+    <!-- Add Bootstrap dropdown buttons under the picture -->
+    <div class="toolbar">  
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Button 1
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown 1
             </button>
-
-            <div class="dropdown-menu" aria-labelledby="dropdown1">
-                <a class="dropdown-item" href="#">Option 1</a>
-                <a class="dropdown-item" href="#">Option 2</a>
-                <a class="dropdown-item" href="#">Option 3</a>
-            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownButton1">
+                <li><a class="dropdown-item" href="#">Action 1</a></li>
+                <li><a class="dropdown-item" href="#">Another action 1</a></li>
+                <li><a class="dropdown-item" href="#">Something else here 1</a></li>
+            </ul>
         </div>
 
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Button 2
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown 2
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdown1">
-                <a class="dropdown-item" href="#">Option 1</a>
-                <a class="dropdown-item" href="#">Option 2</a>
-                <a class="dropdown-item" href="#">Option 3</a>
-            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownButton2">
+                <li><a class="dropdown-item" href="#">Action 2</a></li>
+                <li><a class="dropdown-item" href="#">Another action 2</a></li>
+                <li><a class="dropdown-item" href="#">Something else here 2</a></li>
+            </ul>
         </div>
         
     </div>
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-GLhlTQ8iK4p6U8HR8aa6IUkxgAGX4AiXHIlTf7AuF4HW5c5/AZRIw6SA6bBUvVAA" crossorigin="anonymous"></script>
 
-    <!-- Include Bootstrap JS and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
 </body>
 </html>
