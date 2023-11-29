@@ -5,17 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>colosovo</title>
-    
-    <!-- Include Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
 
     <style>
         /* Add some basic styling for the image container */
         .header-image-container {
             max-width: 100%;
             overflow: hidden;
-            text-align: center;
+            text-align: left;
         }
 
         /* Set the image dimensions */
@@ -39,57 +40,118 @@
 
     </style>
 
-    <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
-            
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">Home</button>
-        </li>
-
-        <li class="nav-item" role="presentation">
-          <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Profile</button>
-        </li>
-        
-        <li class="nav-item" role="presentation">
-          <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Contact</button>
-        </li>
-
-    </ul>
-
 </head>
 
 <body>
     
+    <!--log in button-->
+    <div class="dropdown position-absolute top-0 end-0 m-1">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            Log in
+        </button>
+        <form class="dropdown-menu p-4">
+        <div class="mb-3">
+            <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div>
+        <div class="mb-3">
+            <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+            <label class="form-check-label" for="dropdownCheck2">
+                Remember
+            </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+    
+    <!--header image-->
     <div class="header-image-container">
         <img src="{% static 'header_image.jpeg' %}" alt="Header Image">
     </div>
 
-    <!-- Add Bootstrap dropdown buttons under the picture -->
-    <div class="toolbar">  
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown 1
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownButton1">
-                <li><a class="dropdown-item" href="#">Action 1</a></li>
-                <li><a class="dropdown-item" href="#">Another action 1</a></li>
-                <li><a class="dropdown-item" href="#">Something else here 1</a></li>
-            </ul>
-        </div>
+    <!--toolbar under image-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+      
+            <div class="toolbar"> 
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown 2
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownButton2">
-                <li><a class="dropdown-item" href="#">Action 2</a></li>
-                <li><a class="dropdown-item" href="#">Another action 2</a></li>
-                <li><a class="dropdown-item" href="#">Something else here 2</a></li>
-            </ul>
-        </div>
-        
-    </div>
-    <!-- Include Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-GLhlTQ8iK4p6U8HR8aa6IUkxgAGX4AiXHIlTf7AuF4HW5c5/AZRIw6SA6bBUvVAA" crossorigin="anonymous"></script>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button 1
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
 
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+
+            </div>
+    
+        </div>
+    </nav>
+
+    {% bootstrap_javascript %}
 </body>
 </html>
