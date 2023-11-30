@@ -46,7 +46,7 @@
     
     <!--log in button-->
     <div class="dropdown position-absolute top-0 end-0 m-1">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
             Log in
         </button>
         <form class="dropdown-menu p-4">
@@ -70,6 +70,9 @@
         </form>
     </div>
     
+    <!--language selector-->
+        <!--add ru,en,de-->
+
     <!--header image-->
     <div class="header-image-container">
         <img src="{% static 'header_image.jpeg' %}" alt="Header Image">
@@ -81,9 +84,10 @@
       
             <div class="toolbar"> 
 
+                <!--currency-->
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button 1
+                        currency
                     </button>
                     <ul class="dropdown-menu" style="">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -92,9 +96,10 @@
                     </ul>
                 </div>
                 
+                <!--history-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        история
                     </button>
                     <ul class="dropdown-menu" style="">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -103,9 +108,10 @@
                     </ul>
                 </div>
 
+                <!--sell/buy-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        купи | продай
                     </button>
                     <ul class="dropdown-menu" style="">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -114,20 +120,34 @@
                     </ul>
                 </div>
                 
+                <!--chat-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        чат
                     </button>
                     <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="https://web.telegram.org/a/#-1001847091800">телеграм в веб</a></li>
+                    <li><a class="dropdown-item" href="https://t.me/chat_colosovo">телеграм в приложение</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </div>
 
+                <!--groups-->
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        группы
+                    </button>
+                    <ul class="dropdown-menu" style="">
+                    <li><a class="dropdown-item" href="https://ok.ru/kolosyni">OK.Всем Колосянaм сюда</a></li>
+                    <li><a class="dropdown-item" href="https://ok.ru/group/55377043521558">OK.дом культуры(п.Колосово)</a></li>
+                    <li><a class="dropdown-item" href="https://vk.com/club223675371">VK.Колосово</a></li>
+                    </ul>
+                </div>
+
+                <!--events/news-->
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                        events/news
                     </button>
                     <ul class="dropdown-menu" style="">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -136,9 +156,10 @@
                     </ul>
                 </div>
                 
+                <!--jobs-->
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                        jobs
                     </button>
                     <ul class="dropdown-menu" style="">
                     <li><a class="dropdown-item" href="#">Action</a></li>

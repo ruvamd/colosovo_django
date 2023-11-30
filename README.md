@@ -1,7 +1,7 @@
 # colosovo
-website name: colosovo 
+website name: colosovo</br>
 
-backend: django rest framework
-DB: postgres
-    -sqlalchemy
-hosting: aws ecs
+backend: django rest framework</br>
+DB: postgres</br>
+    - sqlalchemy
+hosting: aws ecs</br>
