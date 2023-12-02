@@ -1,5 +1,5 @@
 # colosovo
-website name: colosovo</br>
+website: https://ruvamd.github.io/colosovo/</br>
 
 backend: django rest framework</br>
 DB: postgres</br>
