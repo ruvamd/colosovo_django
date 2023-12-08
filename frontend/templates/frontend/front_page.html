@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>colosovo</title>
+    <title>колосово</title>
 
     {% load bootstrap5 %}
     {% bootstrap_css %}
@@ -14,14 +14,14 @@
     <style>
         /* Add some basic styling for the image container */
         .header-image-container {
-            max-width: 100%;
+            max-width: 100vw;
             overflow: hidden;
-            text-align: left;
+            text-align: center;
         }
 
         /* Set the image dimensions */
         .header-image-container img {
-            width: 1273px;
+            width: 100%;
             height: 150px;
             object-fit: cover;  /* Maintain aspect ratio and cover the container */
         }
@@ -29,7 +29,8 @@
         /* Style for the toolbar */
         .toolbar {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 10px;
         }
 
@@ -38,6 +39,14 @@
             margin: 0 5px;  /* Add margin between buttons */
         }
 
+        /* Adjust footer styling */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+        }
+        
     </style>
 
 </head>
@@ -86,13 +95,11 @@
 
                 <!--currency-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        currency
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        курс валют
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.agroprombank.com/info/rates.html" target="_blank">агропромбанк</a></li>
                     </ul>
                 </div>
                 
@@ -101,10 +108,10 @@
                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         история
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://grig-rsnd.idknet.com/test/gorod-i-rajon/istoriya-p-kolosovo" target="_blank">совет народных депутатов</a></li>
+                    <li><a class="dropdown-item" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%BE%D1%81%D0%BE%D0%B2%D0%BE_(%D0%9F%D1%80%D0%B8%D0%B4%D0%BD%D0%B5%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8C%D0%B5)" target="_blank">википедия</a></li>
+                    <li><a class="dropdown-item" href="https://history.gospmr.org/selo-kolosovo/" target="_blank">приднестровский исторический портал</a></li>
                     </ul>
                 </div>
 
@@ -113,11 +120,11 @@
                     <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         купи | продай
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://br-pmr.com/search/country,MD/region,1/city,2" target="_blank">григориополь</a></li>
+                        <li><a class="dropdown-item" href="https://t.me/sell_buy_colosovo" target="_blank">колосово</a></li>
                     </ul>
+
                 </div>
                 
                 <!--chat-->
@@ -125,10 +132,9 @@
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         чат
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="https://web.telegram.org/a/#-1001847091800">телеграм в веб</a></li>
-                    <li><a class="dropdown-item" href="https://t.me/chat_colosovo">телеграм в приложение</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://web.telegram.org/a/#-1001847091800" target="_blank">болталка (телеграм в веб)</a></li>
+                        <li><a class="dropdown-item" href="https://t.me/chat_colosovo" target="_blank">болталка (телеграм в приложение)</a></li>
                     </ul>
                 </div>
 
@@ -137,41 +143,92 @@
                     <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         группы
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="https://ok.ru/kolosyni">OK.Всем Колосянaм сюда</a></li>
-                    <li><a class="dropdown-item" href="https://ok.ru/group/55377043521558">OK.дом культуры(п.Колосово)</a></li>
-                    <li><a class="dropdown-item" href="https://vk.com/club223675371">VK.Колосово</a></li>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://ok.ru/kolosyni" target="_blank">OK.Всем Колосянaм сюда</a></li>
+                    <li><a class="dropdown-item" href="https://ok.ru/group/55377043521558" target="_blank">OK.дом культуры(п.Колосово)</a></li>
+                    <li><a class="dropdown-item" href="https://vk.com/club223675371" target="_blank">VK.Колосово</a></li>
                     </ul>
                 </div>
 
                 <!--events/news-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        events/news
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        новости
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://tv.pgtrk.com/ru/news" target="_blank">первый приднестровский</a></li>
+                    <li><a class="dropdown-item" href="https://novostipmr.com/ru" target="_blank">новости приднестровья</a></li>
                     </ul>
                 </div>
                 
                 <!--jobs-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        jobs
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        работа
                     </button>
-                    <ul class="dropdown-menu" style="">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="http://ef-pmr.org/vacancies/grigoriopol/" target="_blank">григориополь (Фонд Социального Страхования)</a></li>
+                    <li><a class="dropdown-item" href="https://makler.md/grigoriopol/job/job-offers?list&list=detail" target="_blank">григориополь (makler)</a></li>
+                    
                     </ul>
                 </div>
 
+                <!--videos-->
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        видео
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=Z5zIS8sdbcQ" target="_blank">в путь! (первый приднестровский)</a></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=11G68Dw1Gps&pp=ygUQ0LrQvtC70L7RgdC-0LLQvg%3D%3D" target="_blank">тсв (в колосово отпраздновали ивана купалу)</a></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=wqiVSDzifh0&list=PLQTkn83T0u7Oxy4FbyLuQTnoe6Gg9_hDq&index=7&t=548s&pp=gAQBiAQB" target="_blank">ставок</a></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=v8sglj-4gWI&list=PLQTkn83T0u7Oxy4FbyLuQTnoe6Gg9_hDq&index=6&t=209s&pp=gAQBiAQB" target="_blank">на велике 🚴 по селу</a></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=-42Q4CbBVdo&list=PLQTkn83T0u7Oxy4FbyLuQTnoe6Gg9_hDq&index=4&pp=gAQBiAQB" target="_blank">центральная дорога</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=E0jyRba1wZo&list=PLQTkn83T0u7Oxy4FbyLuQTnoe6Gg9_hDq&index=5&pp=gAQBiAQB" target="_blank">вид сверху 1</a></li>
+                    <li><a class="dropdown-item" href="https://www.youtube.com/watch?v=fnwGRGut54Q&list=PLQTkn83T0u7Oxy4FbyLuQTnoe6Gg9_hDq&index=3&pp=gAQBiAQB" target="_blank">вид сверху 2</a></li>
+
+                    </ul>
+                </div>
+
+                <!--photos-->
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        фото
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="" target="_blank">скоро добавлю</a></li>
+                    <li><a class="dropdown-item" href="" target="_blank">скоро добавлю</a></li>
+                    
+                    </ul>
+                </div>
+
+                <!--map-->
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        карты
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://yandex.ru/maps/geo/1508541152/?ll=29.579322%2C47.329108&z=13.95" target="_blank">яндекс карта</a></li>
+                    <li><a class="dropdown-item" href="https://www.google.com/maps/place/Colosova,+Moldova/@47.3294978,29.5449183,5097m/data=!3m2!1e3!4b1!4m6!3m5!1s0x40c94bc3ed435f57:0x5731dfd63b53c434!8m2!3d47.3346774!4d29.5659422!16s%2Fg%2F122np9pq?entry=ttu" target="_blank">гугл карта</a></li>
+                    </ul>
+                </div>
+
+                <!--website news-->
+                <a class="btn btn-outline-dark" href="https://t.me/colosovo_website_news" targer="_blank">новости сайта</a>
+                
             </div>
     
         </div>
     </nav>
+
+    <!-- Add a standard footer -->
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom w-100">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="text-muted">2023 колосово</span>
+            <a class="btn btn-outline-dark ms-auto" href="https://t.me/ruvamd" targer="_blank">обратная связь</a>
+        </div>
+    </footer>
 
     {% bootstrap_javascript %}
 </body>
